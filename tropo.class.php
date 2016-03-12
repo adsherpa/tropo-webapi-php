@@ -1363,9 +1363,9 @@ class Result {
     $this->_sequence = $result->result->sequence;
     $this->_complete = $result->result->complete;
     $this->_error = $result->result->error;
-    $this->_userType = $result->result->userType;
-    $this->_actions = $result->result->actions;
-    $this->_name = $result->result->actions->name;
+    $this->_userType = isset($result->result->userType) ? $result->result->userType : null;
+    $this->_actions = isset($result->result->actions) ? $result->result->actions : null;
+    $this->_name = isset($result->result->actions->name) ? $result->result->actions->name : null;
     $this->_attempts = $result->result->actions->attempts;
     $this->_disposition = $result->result->actions->disposition;
     $this->_confidence = $result->result->actions->confidence;
